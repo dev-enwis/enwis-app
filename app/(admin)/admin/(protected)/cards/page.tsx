@@ -15,8 +15,9 @@ import { ApiError } from "@/lib/api";
 const emptyCard: Omit<AdminCard, "id"> = {
   bank_name: "",
   card_number: "",
-  card_holder: "ENWIS PLATFORM",
+  card_holder_name: "ENWIS PLATFORM",
   is_active: true,
+  sort_order: 0,
 };
 
 function CardModal({
@@ -37,7 +38,7 @@ function CardModal({
   const set = (k: keyof typeof form, v: unknown) => setForm((p) => ({ ...p, [k]: v }));
 
   const save = async () => {
-    if (!form.bank_name || !form.card_number || !form.card_holder) {
+    if (!form.bank_name || !form.card_number || !form.card_holder_name) {
       toast.error("Barcha maydonlar majburiy");
       return;
     }
@@ -87,7 +88,7 @@ function CardModal({
           </div>
           <div>
             <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Karta egasi <span className="text-red-500">*</span></label>
-            <Input placeholder="ENWIS PLATFORM" value={form.card_holder} onChange={(e) => set("card_holder", e.target.value)} />
+            <Input placeholder="ENWIS PLATFORM" value={form.card_holder_name} onChange={(e) => set("card_holder_name", e.target.value)} />
           </div>
           <label className="flex items-center gap-3 cursor-pointer">
             <input
@@ -204,7 +205,7 @@ function CardsPageContent() {
                 </div>
               </div>
               <p className={`text-sm font-medium ${card.is_active ? "text-white/80" : "text-[var(--color-slate)]"}`}>
-                {card.card_holder}
+                {card.card_holder_name}
               </p>
               <div className="flex gap-2 pt-1">
                 <button
