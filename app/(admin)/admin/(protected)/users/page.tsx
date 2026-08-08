@@ -253,7 +253,7 @@ function UsersPageContent() {
       title: `Foydalanuvchini ${label}`,
       description: `${u.full_name ?? u.username} ni ${label}ni xohlaysizmi?`,
       confirmText: label.charAt(0).toUpperCase() + label.slice(1),
-      variant: newStatus === "blocked" ? "danger" : "default",
+      variant: newStatus === "blocked" ? "danger" : "confirm",
     });
     if (!ok) return;
     try {

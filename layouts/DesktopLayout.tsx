@@ -8,11 +8,11 @@ import { Topbar } from "@/components/dashboard/topbar";
  */
 export function DesktopLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen bg-mist">
+    <div className="flex min-h-screen bg-[var(--color-mist)]">
       <Sidebar />
       <div className="flex-1 flex flex-col min-w-0">
         <Topbar />
-        <main className="flex-1 p-4 sm:p-6">{children}</main>
+        <main className="flex-1 p-3 sm:p-5 lg:p-6">{children}</main>
       </div>
     </div>
   );

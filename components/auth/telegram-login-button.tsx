@@ -69,22 +69,22 @@ export function TelegramLoginButton({ onError, children }: Props) {
         alignItems: "center",
         justifyContent: "center",
         gap: 10,
-        border: "1.5px solid #e4e8f2",
-        borderRadius: 12,
+        border: "1px solid var(--color-line)",
+        borderRadius: "var(--radius-lg)",
         padding: "12px 13px",
         fontSize: 13,
-        fontWeight: 500,
-        color: "#0c1422",
-        background: "#f7f8fd",
+        fontWeight: 600,
+        color: "var(--color-ink)",
+        background: "var(--color-canvas)",
         cursor: "pointer",
         minHeight: 44,
         transition: "border-color .16s, box-shadow .16s, background .16s",
       }}
       onMouseEnter={(e) => {
         const el = e.currentTarget;
-        el.style.borderColor = "#6366f1";
-        el.style.boxShadow = "0 0 0 3px rgba(99,102,241,.12)";
-        el.style.background = "#fff";
+          el.style.borderColor = "var(--color-volt)";
+          el.style.boxShadow = "0 0 0 3px color-mix(in srgb, var(--color-volt) 18%, transparent)";
+          el.style.background = "var(--color-canvas)";
       }}
       onMouseLeave={(e) => {
         const el = e.currentTarget;
