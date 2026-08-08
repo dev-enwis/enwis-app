@@ -536,13 +536,13 @@ function SettingsPageContent() {
             </CardHeader>
             <CardContent className="space-y-4">
               {user?.is_teacher || user?.roles?.includes("TEACHER") ? (
-                <div className="flex items-center gap-3 p-4 rounded-[var(--radius-lg)] bg-emerald-50 border border-emerald-200">
-                  <CheckCircle size={24} className="text-emerald-600" />
+                <div className="flex items-center gap-3 p-4 rounded-[var(--radius-lg)] bg-[var(--color-success-light)] border border-[var(--color-success)]/25">
+                  <CheckCircle size={24} className="text-[var(--color-success)]" />
                   <div>
-                    <p className="font-medium text-emerald-800">Siz o&apos;qituvchi rolidasiz</p>
-                    <p className="text-sm text-emerald-600">Imtihon yaratish va boshqarish imkoniyatiga egasiz</p>
+                    <p className="font-medium text-[var(--color-success)]">Siz o&apos;qituvchi rolidasiz</p>
+                    <p className="text-sm text-[var(--color-success)]">Imtihon yaratish va boshqarish imkoniyatiga egasiz</p>
                     {user?.teacher_verified_at && (
-                      <p className="text-xs text-emerald-500 mt-1">
+                      <p className="text-xs text-[var(--color-success)]/80 mt-1">
                         {new Date(user.teacher_verified_at).toLocaleDateString("uz-UZ")} dan beri
                       </p>
                     )}
@@ -773,8 +773,8 @@ function SettingsPageContent() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
-                  <LogOut size={18} className="text-red-600" />
+                <div className="w-10 h-10 rounded-full bg-[var(--color-danger-light)] flex items-center justify-center">
+                  <LogOut size={18} className="text-[var(--color-danger)]" />
                 </div>
                 Hisobni o&apos;chirish
               </CardTitle>
@@ -1032,7 +1032,7 @@ function SettingsPageContent() {
                     <div className="flex items-center gap-3 min-w-0">
                       <div className="w-8 h-8 rounded-full bg-[var(--color-mist)] flex items-center justify-center shrink-0">
                         {browserNotifGranted ? (
-                          <BellRing size={16} className="text-[var(--color-success,#16a34a)]" />
+                          <BellRing size={16} className="text-[var(--color-success)]" />
                         ) : (
                           <BellOff size={16} className="text-[var(--color-slate)]" />
                         )}

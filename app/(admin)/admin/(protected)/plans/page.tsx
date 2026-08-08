@@ -87,11 +87,11 @@ function PlanModal({
         <ModalHeader onClose={onClose}>{isEdit ? "Rejani tahrirlash" : "Yangi reja"}</ModalHeader>
         <div className="p-6 grid grid-cols-2 gap-4 max-h-[60vh] overflow-y-auto">
           <div className="col-span-2">
-            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Kod nomi <span className="text-red-500">*</span></label>
+            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Kod nomi <span className="text-[var(--color-danger)]">*</span></label>
             <Input placeholder="pro_monthly" value={form.name ?? ""} onChange={(e) => set("name", e.target.value)} disabled={isEdit} />
           </div>
           <div className="col-span-2">
-            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Ko'rsatma nomi <span className="text-red-500">*</span></label>
+            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Ko'rsatma nomi <span className="text-[var(--color-danger)]">*</span></label>
             <Input placeholder="PRO (1 oy)" value={form.display_name ?? ""} onChange={(e) => set("display_name", e.target.value)} />
           </div>
           <div>
@@ -252,7 +252,7 @@ function PlansPageContent() {
             <div key={plan.id} className={`rounded-[var(--radius-xl)] border bg-white p-5 shadow-[var(--shadow-soft-sm)] space-y-3 ${!plan.is_active ? "opacity-60 border-dashed" : "border-[var(--color-line)]"}`}>
               <div className="flex items-start justify-between">
                 <div>
-                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${TIER_COLORS[plan.tier] ?? "bg-gray-100 text-gray-600"}`}>
+                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${TIER_COLORS[plan.tier] ?? "bg-[var(--color-mist)] text-[var(--color-slate)]"}`}>
                     {plan.tier}
                   </span>
                   <p className="font-semibold text-[var(--color-ink)] mt-2">{plan.display_name}</p>
@@ -296,7 +296,7 @@ function PlansPageContent() {
                 </Button>
                 <Button
                   size="sm"
-                  className="flex-1 text-xs bg-red-50 text-red-600 hover:bg-red-100"
+                  className="flex-1 text-xs bg-[var(--color-danger-light)] text-[var(--color-danger)] hover:bg-[var(--color-danger)]/15"
                   onClick={() => handleDelete(plan)}
                 >
                   <Trash2 size={13} /> O'chirish

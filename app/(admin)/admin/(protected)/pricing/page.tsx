@@ -114,8 +114,8 @@ function EditPricingPlanModal({
             <div className="space-y-1.5 mb-2">
               {features.map((f, i) => (
                 <div key={i} className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-[var(--radius-md)] bg-[var(--color-mist)] text-sm">
-                  <span className="flex items-center gap-1.5"><Check size={12} className="text-emerald-600" /> {f}</span>
-                  <button onClick={() => removeFeature(i)} className="text-[var(--color-slate)] hover:text-red-600">
+                  <span className="flex items-center gap-1.5"><Check size={12} className="text-[var(--color-success)]" /> {f}</span>
+                  <button onClick={() => removeFeature(i)} className="text-[var(--color-slate)] hover:text-[var(--color-danger)]">
                     <Trash2 size={14} />
                   </button>
                 </div>
@@ -192,13 +192,13 @@ function PricingTab() {
                   <span className="text-lg font-semibold text-[var(--color-ink)]">{fmt(p.price)} so&apos;m</span>
                 )}
                 {p.discount && (
-                  <p className="text-xs text-emerald-600 mt-0.5">-{p.discount.percentage}% "{p.discount.name}"</p>
+                  <p className="text-xs text-[var(--color-success)] mt-0.5">-{p.discount.percentage}% "{p.discount.name}"</p>
                 )}
               </div>
               <ul className="space-y-1 mb-4 text-xs text-[var(--color-slate)]">
                 {p.features.slice(0, 4).map((f) => (
                   <li key={f.id} className="flex items-center gap-1.5">
-                    <Check size={11} className="text-emerald-600 shrink-0" /> {f.feature}
+                    <Check size={11} className="text-[var(--color-success)] shrink-0" /> {f.feature}
                   </li>
                 ))}
                 {p.features.length === 0 && <li className="text-[var(--color-slate-light)]">Imkoniyatlar yo&apos;q</li>}
@@ -407,7 +407,7 @@ function DiscountsTab({ plans }: { plans: AdminPricingPlan[] }) {
                   <tr key={d.id} className="hover:bg-[var(--color-mist)]/40 transition-colors">
                     <td className="px-6 py-3.5 font-medium text-[var(--color-ink)]">{d.name}</td>
                     <td className="px-4 py-3.5 text-[var(--color-slate)]">{planName(d.plan_id)}</td>
-                    <td className="px-4 py-3.5 text-center font-medium text-emerald-600">-{d.percentage}%</td>
+                    <td className="px-4 py-3.5 text-center font-medium text-[var(--color-success)]">-{d.percentage}%</td>
                     <td className="px-4 py-3.5 text-xs text-[var(--color-slate)]">
                       {toDateInputValue(d.start_date)} → {toDateInputValue(d.end_date)}
                     </td>
@@ -419,7 +419,7 @@ function DiscountsTab({ plans }: { plans: AdminPricingPlan[] }) {
                         <button onClick={() => setModalTarget(d)} className="p-1.5 rounded-[var(--radius-md)] hover:bg-[var(--color-mist)] text-[var(--color-slate)]">
                           <Pencil size={14} />
                         </button>
-                        <button onClick={() => handleDelete(d)} className="p-1.5 rounded-[var(--radius-md)] hover:bg-red-50 text-red-600">
+                        <button onClick={() => handleDelete(d)} className="p-1.5 rounded-[var(--radius-md)] hover:bg-[var(--color-danger-light)] text-[var(--color-danger)]">
                           <Trash2 size={14} />
                         </button>
                       </div>
@@ -668,7 +668,7 @@ function PromoCodesTab({ plans }: { plans: AdminPricingPlan[] }) {
                 promoCodes.map((p) => (
                   <tr key={p.id} className="hover:bg-[var(--color-mist)]/40 transition-colors">
                     <td className="px-6 py-3.5 font-mono font-medium text-[var(--color-ink)]">{p.code}</td>
-                    <td className="px-4 py-3.5 text-center text-emerald-600 font-medium">
+                    <td className="px-4 py-3.5 text-center text-[var(--color-success)] font-medium">
                       {p.discount_type === "percentage" ? `-${p.discount_value}%` : `-${fmt(p.discount_value)} so'm`}
                     </td>
                     <td className="px-4 py-3.5 text-center text-[var(--color-slate)]">
@@ -685,7 +685,7 @@ function PromoCodesTab({ plans }: { plans: AdminPricingPlan[] }) {
                         <button onClick={() => setModalTarget(p)} className="p-1.5 rounded-[var(--radius-md)] hover:bg-[var(--color-mist)] text-[var(--color-slate)]">
                           <Pencil size={14} />
                         </button>
-                        <button onClick={() => handleDelete(p)} className="p-1.5 rounded-[var(--radius-md)] hover:bg-red-50 text-red-600">
+                        <button onClick={() => handleDelete(p)} className="p-1.5 rounded-[var(--radius-md)] hover:bg-[var(--color-danger-light)] text-[var(--color-danger)]">
                           <Trash2 size={14} />
                         </button>
                       </div>

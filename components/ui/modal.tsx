@@ -42,17 +42,17 @@ type DialogVariant = "info" | "success" | "warning" | "danger" | "confirm";
 
 const variantIcons: Record<DialogVariant, React.ReactNode> = {
   info: <Info className="h-6 w-6 text-[var(--color-deep)]" />,
-  success: <CheckCircle2 className="h-6 w-6 text-emerald-600" />,
+  success: <CheckCircle2 className="h-6 w-6 text-[var(--color-success)]" />,
   warning: <AlertTriangle className="h-6 w-6 text-amber-600" />,
-  danger: <AlertCircle className="h-6 w-6 text-red-600" />,
+  danger: <AlertCircle className="h-6 w-6 text-[var(--color-danger)]" />,
   confirm: <AlertTriangle className="h-6 w-6 text-amber-600" />,
 };
 
 const variantColors: Record<DialogVariant, string> = {
   info: "bg-[var(--color-deep)]/10 text-[var(--color-deep)]",
-  success: "bg-emerald-100 text-emerald-700",
+  success: "bg-[var(--color-success-light)] text-[var(--color-success)]",
   warning: "bg-amber-100 text-amber-700",
-  danger: "bg-red-100 text-red-700",
+  danger: "bg-[var(--color-danger-light)] text-[var(--color-danger)]",
   confirm: "bg-amber-100 text-amber-700",
 };
 

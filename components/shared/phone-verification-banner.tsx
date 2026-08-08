@@ -74,12 +74,12 @@ export function PhoneVerificationBanner() {
   };
 
   return (
-    <div className="w-full bg-[var(--color-warning-soft,#FFF7E6)] border-b border-[var(--color-warning,#F5A623)]/30">
+    <div className="w-full bg-[var(--color-warning-light)] border-b border-[var(--color-warning)]/30">
       <div className="max-w-6xl mx-auto px-4 py-2.5">
         {!open ? (
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex items-center gap-2 text-sm text-[var(--color-ink)]">
-              <ShieldAlert size={16} className="text-[var(--color-warning,#B7791F)] shrink-0" />
+              <ShieldAlert size={16} className="text-[var(--color-warning)] shrink-0" />
               <span>Telefon raqamingizni tasdiqlang — hisobingiz xavfsizligi uchun muhim.</span>
             </div>
             <Button size="sm" variant="outline" onClick={() => setOpen(true)}>

@@ -122,7 +122,7 @@ function RejectModal({ payment, onClose, onDone }: { payment: AdminPayment; onCl
           </p>
           <div>
             <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">
-              Sabab <span className="text-red-500">*</span>
+              Sabab <span className="text-[var(--color-danger)]">*</span>
             </label>
             <textarea
               className="w-full rounded-[var(--radius-lg)] border border-[var(--color-line)] px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-[var(--color-deep)]/20 focus:border-[var(--color-deep)]"
@@ -139,7 +139,7 @@ function RejectModal({ payment, onClose, onDone }: { payment: AdminPayment; onCl
         <div className="px-6 pb-6 flex gap-3">
           <Button variant="ghost" className="flex-1" onClick={onClose}>Bekor</Button>
           <Button
-            className="flex-1 bg-red-600 hover:bg-red-700 text-white"
+            className="flex-1 bg-[var(--color-danger)] hover:bg-[var(--color-danger)]/90 text-white"
             onClick={handle}
             disabled={saving || reason.trim().length < 10}
           >
@@ -275,13 +275,13 @@ function PaymentsPageContent() {
                           <div className="flex items-center gap-1.5 justify-end">
                             <button
                               onClick={() => setApproveTarget(p)}
-                              className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-[var(--radius-md)] bg-emerald-50 text-emerald-700 hover:bg-emerald-100 font-medium transition-colors"
+                              className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-[var(--radius-md)] bg-[var(--color-success-light)] text-[var(--color-success)] hover:bg-[var(--color-success)]/15 font-medium transition-colors"
                             >
                               <Check size={12} /> Tasdiqlash
                             </button>
                             <button
                               onClick={() => setRejectTarget(p)}
-                              className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-[var(--radius-md)] bg-red-50 text-red-600 hover:bg-red-100 font-medium transition-colors"
+                              className="flex items-center gap-1 text-xs px-2.5 py-1.5 rounded-[var(--radius-md)] bg-[var(--color-danger-light)] text-[var(--color-danger)] hover:bg-[var(--color-danger)]/15 font-medium transition-colors"
                             >
                               <X size={12} /> Rad
                             </button>

@@ -57,14 +57,14 @@ export function PwaManager() {
 
   return (
     <div
-      className="fixed bottom-0 inset-x-0 z-50 flex items-center gap-3 px-4 py-3 bg-[var(--color-ink,#161A2C)] text-white shadow-lg"
+      className="fixed bottom-0 inset-x-0 z-50 flex items-center gap-3 px-4 py-3 bg-[var(--color-deep)] text-white shadow-[var(--shadow-soft-lg)]"
       style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom, 0px))" }}
     >
       <Download className="h-4 w-4 shrink-0" />
       <p className="text-sm flex-1">Enwis&apos;ni ilova sifatida o&apos;rnating — tezroq ochiladi.</p>
       <button
         onClick={handleInstall}
-        className="text-xs font-semibold rounded-full bg-white text-[var(--color-ink,#161A2C)] px-3 py-1.5 whitespace-nowrap"
+        className="text-xs font-semibold rounded-full bg-white text-[var(--color-deep)] px-3 py-1.5 whitespace-nowrap"
       >
         O&apos;rnatish
       </button>

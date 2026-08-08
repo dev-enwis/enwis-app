@@ -699,8 +699,8 @@ function BillingPageContent() {
                 <p className="text-sm text-[var(--color-slate)]">{teacherPkg.description}</p>
                 {user?.is_teacher ? (
                   <div className="flex items-center gap-2 mt-2">
-                    <CheckCircle size={16} className="text-emerald-600" />
-                    <span className="text-sm font-medium text-emerald-700">Siz o'qituvchisiz</span>
+                    <CheckCircle size={16} className="text-[var(--color-success)]" />
+                    <span className="text-sm font-medium text-[var(--color-success)]">Siz o'qituvchisiz</span>
                   </div>
                 ) : (
                   <p className="text-xl font-semibold text-[var(--color-ink)] mt-2">
@@ -870,7 +870,7 @@ function BillingPageContent() {
                 <div className="min-w-0 flex items-center gap-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-mist)] shrink-0">
                     {p.status === "approved" ? (
-                      <ShieldCheck size={16} className="text-emerald-600" />
+                      <ShieldCheck size={16} className="text-[var(--color-success)]" />
                     ) : p.status === "rejected" ? (
                       <XCircle size={16} className="text-[var(--color-danger)]" />
                     ) : (

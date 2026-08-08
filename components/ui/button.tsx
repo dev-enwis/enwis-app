@@ -18,6 +18,9 @@ variants: {
           ghost: "bg-transparent text-[var(--color-ink)] hover:bg-[var(--color-mist)]",
           destructive:
             "bg-[var(--color-danger)] text-white hover:brightness-90 active:scale-[0.98]",
+          success:
+            "bg-[var(--color-success)] text-white hover:brightness-90 active:scale-[0.98]",
+          link: "bg-transparent text-[var(--color-volt)] underline-offset-4 hover:underline px-0 h-auto",
         },
       size: {
         sm: "h-10 px-4 text-sm",

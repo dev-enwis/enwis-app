@@ -16,7 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { OtpInput } from "@/components/ui/otp-input";
-import { Logo } from "@/components/ui/logo";
+import { AuthShell, AuthCard, AuthErrorAlert } from "@/components/auth/auth-shell";
 import { useAuthStore } from "@/stores/auth";
 import { ApiError } from "@/lib/api";
 
@@ -124,34 +124,9 @@ export default function RegisterPage() {
   const steps = ["details", "otp"] as Step[];
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-[var(--color-mist)] px-4 overflow-hidden">
-      {/* Ambient layered background */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 right-[-10%] h-[560px] w-[560px] rounded-full bg-[var(--color-volt)]/15 blur-[120px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-40 left-[-15%] h-[420px] w-[420px] rounded-full bg-[var(--color-deep)]/10 blur-[100px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,black,transparent)] bg-[linear-gradient(var(--color-line)_1px,transparent_1px),linear-gradient(90deg,var(--color-line)_1px,transparent_1px)] bg-[size:64px_64px] opacity-40"
-      />
-
-      <div className="relative z-10 w-full max-w-md">
-        <div className="text-center mb-8">
-          <div className="inline-flex justify-center">
-            <Logo />
-          </div>
-        </div>
-
-        <div className="rounded-[var(--radius-2xl)] border border-[var(--color-line)] bg-white p-8 shadow-[var(--shadow-soft-md)]">
-          {error && (
-            <div className="mb-5 p-3.5 rounded-[var(--radius-lg)] bg-[var(--color-danger-light)] text-[var(--color-danger)] text-sm font-medium">
-              {error}
-            </div>
-          )}
+    <AuthShell>
+      <AuthCard>
+          {error && <AuthErrorAlert>{error}</AuthErrorAlert>}
 
           {step !== "done" && (
             <div className="flex items-center justify-center gap-2 mb-7">
@@ -393,8 +368,7 @@ export default function RegisterPage() {
               </p>
             </div>
           )}
-        </div>
-      </div>
-    </div>
+      </AuthCard>
+    </AuthShell>
   );
 }
