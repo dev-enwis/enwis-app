@@ -229,7 +229,7 @@ export default function AdminDashboardPage() {
             className="relative flex flex-col items-center gap-2 p-4 rounded-[var(--radius-xl)] border border-[var(--color-line)] bg-white hover:bg-[var(--color-mist)] hover:shadow-[var(--shadow-soft-sm)] transition-all text-center"
           >
             {item.badge ? (
-              <span className="absolute top-2 right-2 w-5 h-5 rounded-full bg-red-500 text-white text-[10px] font-bold flex items-center justify-center">
+              <span className="absolute top-2 right-2 w-5 h-5 rounded-full bg-[var(--color-danger)] text-white text-[10px] font-bold flex items-center justify-center">
                 {item.badge > 99 ? "99+" : item.badge}
               </span>
             ) : null}

@@ -446,8 +446,8 @@ function QuestionsPageContent() {
                       <p className="text-lg font-semibold flex items-center gap-1.5">
                         {calibrateResult.converged ? (
                           <>
-                            <CheckCircle2 className="h-4 w-4 text-emerald-600" />
-                            <span className="text-emerald-700">Ha</span>
+                            <CheckCircle2 className="h-4 w-4 text-[var(--color-success)]" />
+                            <span className="text-[var(--color-success)]">Ha</span>
                           </>
                         ) : (
                           <>
@@ -547,7 +547,7 @@ function QuestionsPageContent() {
                     </p>
                   )}
                   {generateError && (
-                    <div className="flex items-start gap-2 text-sm text-red-700 bg-[var(--color-danger-light)] border border-red-200 rounded-[var(--radius-lg)] p-3">
+                    <div className="flex items-start gap-2 text-sm text-[var(--color-danger)] bg-[var(--color-danger-light)] border border-[var(--color-danger)]/25 rounded-[var(--radius-lg)] p-3">
                       <AlertTriangle className="h-4 w-4 mt-0.5 shrink-0" />
                       <div>
                         <p>{generateError}</p>
@@ -569,7 +569,7 @@ function QuestionsPageContent() {
 
               {wizardStep === 2 && generateResult && (
                 <div className="space-y-4">
-                  <div className="flex items-center gap-2 text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-[var(--radius-lg)] p-3 text-sm">
+                  <div className="flex items-center gap-2 text-[var(--color-success)] bg-[var(--color-success-light)] border border-[var(--color-success)]/25 rounded-[var(--radius-lg)] p-3 text-sm">
                     <CheckCircle2 className="h-4 w-4 shrink-0" />
                     <span>
                       <strong>{generateResult.test.title}</strong> nomli test qoralama holatda yaratildi ({generateResult.selected_question_ids.length} ta savol).

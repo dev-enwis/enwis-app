@@ -48,7 +48,7 @@ const TIER_BADGE: Record<string, string> = {
 
 function QuotaDisplay({ val }: { val: number | null }) {
   if (val === null) return <span className="text-[var(--color-slate)]">Standart</span>;
-  if (val === -1) return <span className="flex items-center gap-1 text-emerald-600"><InfinityIcon size={14} /> Cheksiz</span>;
+  if (val === -1) return <span className="flex items-center gap-1 text-[var(--color-success)]"><InfinityIcon size={14} /> Cheksiz</span>;
   return <span>{val}</span>;
 }
 
@@ -382,7 +382,7 @@ function UsersPageContent() {
                         <Badge variant={statusInfo.variant}>{statusInfo.label}</Badge>
                       </td>
                       <td className="px-4 py-3.5 text-center">
-                        <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${TIER_BADGE[u.subscription_tier] ?? "bg-gray-100 text-gray-600"}`}>
+                        <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${TIER_BADGE[u.subscription_tier] ?? "bg-[var(--color-mist)] text-[var(--color-slate)]"}`}>
                           {u.subscription_tier}
                         </span>
                       </td>
@@ -392,7 +392,7 @@ function UsersPageContent() {
                       <td className="px-4 py-3.5 text-center">
                         <div className="flex items-center justify-center gap-1 flex-wrap">
                           {u.roles.map((r) => (
-                            <span key={r} className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${TIER_BADGE[r] ?? "bg-gray-100 text-gray-600"}`}>
+                            <span key={r} className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${TIER_BADGE[r] ?? "bg-[var(--color-mist)] text-[var(--color-slate)]"}`}>
                               {r}
                             </span>
                           ))}
@@ -417,7 +417,7 @@ function UsersPageContent() {
                             <DropdownSeparator />
                             <DropdownItem onClick={() => handleStatusToggle(u)}>
                               {u.status === "blocked" ? (
-                                <><ShieldCheck size={14} className="mr-2 text-emerald-600" />Faollashtirish</>
+                                <><ShieldCheck size={14} className="mr-2 text-[var(--color-success)]" />Faollashtirish</>
                               ) : (
                                 <><ShieldX size={14} className="mr-2 text-amber-600" />Bloklash</>
                               )}

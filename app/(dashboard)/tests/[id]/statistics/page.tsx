@@ -266,10 +266,10 @@ export default function TestStatisticsPage() {
                         <span
                           className={`font-medium ${
                             correctPct >= 75
-                              ? "text-emerald-600"
+                              ? "text-[var(--color-success)]"
                               : correctPct >= 45
                               ? "text-amber-600"
-                              : "text-red-500"
+                              : "text-[var(--color-danger)]"
                           }`}
                         >
                           {correctPct}%

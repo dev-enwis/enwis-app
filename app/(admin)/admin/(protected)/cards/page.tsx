@@ -64,11 +64,11 @@ function CardModal({
         <ModalHeader onClose={onClose}>{isEdit ? "Kartani tahrirlash" : "Yangi karta"}</ModalHeader>
         <div className="p-6 space-y-4">
           <div>
-            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Bank nomi <span className="text-red-500">*</span></label>
+            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Bank nomi <span className="text-[var(--color-danger)]">*</span></label>
             <Input placeholder="Kapitalbank" value={form.bank_name} onChange={(e) => set("bank_name", e.target.value)} />
           </div>
           <div>
-            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Karta raqami <span className="text-red-500">*</span></label>
+            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Karta raqami <span className="text-[var(--color-danger)]">*</span></label>
             <div className="relative">
               <Input
                 type={showFull ? "text" : "password"}
@@ -87,7 +87,7 @@ function CardModal({
             </div>
           </div>
           <div>
-            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Karta egasi <span className="text-red-500">*</span></label>
+            <label className="block text-xs font-medium text-[var(--color-ink)] mb-1">Karta egasi <span className="text-[var(--color-danger)]">*</span></label>
             <Input placeholder="ENWIS PLATFORM" value={form.card_holder_name} onChange={(e) => set("card_holder_name", e.target.value)} />
           </div>
           <label className="flex items-center gap-3 cursor-pointer">
@@ -222,8 +222,8 @@ function CardsPageContent() {
                   onClick={() => handleDelete(card)}
                   className={`flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-[var(--radius-md)] font-medium transition-colors ${
                     card.is_active
-                      ? "bg-red-500/20 hover:bg-red-500/30 text-white"
-                      : "bg-red-50 hover:bg-red-100 text-red-600"
+                      ? "bg-[var(--color-danger)]/20 hover:bg-[var(--color-danger)]/30 text-white"
+                      : "bg-[var(--color-danger-light)] hover:bg-[var(--color-danger)]/15 text-[var(--color-danger)]"
                   }`}
                 >
                   <Trash2 size={12} /> O&apos;chirish

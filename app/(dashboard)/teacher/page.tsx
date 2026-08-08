@@ -184,7 +184,7 @@ export default function TeacherDashboardPage() {
                 <card.icon size={18} />
               </div>
               {card.trend !== undefined && card.trend !== null && (
-                <span className={`text-xs font-medium flex items-center gap-0.5 ${card.trend >= 0 ? "text-emerald-600" : "text-red-500"}`}>
+                <span className={`text-xs font-medium flex items-center gap-0.5 ${card.trend >= 0 ? "text-[var(--color-success)]" : "text-[var(--color-danger)]"}`}>
                   <ArrowUpRight size={12} className={card.trend < 0 ? "rotate-180" : ""} />
                   {Math.abs(card.trend)}
                 </span>
@@ -209,8 +209,8 @@ export default function TeacherDashboardPage() {
       {!loading && data && (
         <div className="grid grid-cols-2 gap-4">
           <div className="rounded-[var(--radius-xl)] border border-[var(--color-line)] bg-white p-5 shadow-[var(--shadow-soft-sm)] flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center">
-              <CheckCircle2 size={20} className="text-emerald-600" />
+            <div className="w-10 h-10 rounded-full bg-[var(--color-success-light)] flex items-center justify-center">
+              <CheckCircle2 size={20} className="text-[var(--color-success)]" />
             </div>
             <div>
               <p className="text-xl font-semibold text-[var(--color-ink)]">{data.overview.pass_count}</p>
@@ -218,8 +218,8 @@ export default function TeacherDashboardPage() {
             </div>
           </div>
           <div className="rounded-[var(--radius-xl)] border border-[var(--color-line)] bg-white p-5 shadow-[var(--shadow-soft-sm)] flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center">
-              <XCircle size={20} className="text-red-500" />
+            <div className="w-10 h-10 rounded-full bg-[var(--color-danger-light)] flex items-center justify-center">
+              <XCircle size={20} className="text-[var(--color-danger)]" />
             </div>
             <div>
               <p className="text-xl font-semibold text-[var(--color-ink)]">{data.overview.fail_count}</p>

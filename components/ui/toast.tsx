@@ -40,18 +40,18 @@ export function useToast() {
 
 const toastIcons: Record<ToastVariant, React.ReactNode> = {
   default: null,
-  success: <CheckCircle2 className="h-4 w-4 text-emerald-500" />,
+  success: <CheckCircle2 className="h-4 w-4 text-[var(--color-success)]/80" />,
   warning: <AlertTriangle className="h-4 w-4 text-amber-500" />,
   danger: <XCircle className="h-4 w-4 text-[var(--color-danger)]" />,
-  info: <Info className="h-4 w-4 text-blue-500" />,
+  info: <Info className="h-4 w-4 text-[var(--color-info)]" />,
 };
 
 const toastStyles: Record<ToastVariant, string> = {
   default: "bg-[var(--color-deep)] text-white",
-  success: "bg-emerald-50 border border-emerald-200 text-emerald-800",
+  success: "bg-[var(--color-success-light)] border border-[var(--color-success)]/25 text-[var(--color-success)]",
   warning: "bg-amber-50 border border-amber-200 text-amber-800",
-  danger: "bg-[var(--color-danger-light)] border border-red-200 text-red-800",
-  info: "bg-blue-50 border border-blue-200 text-blue-800",
+  danger: "bg-[var(--color-danger-light)] border border-[var(--color-danger)]/25 text-[var(--color-danger)]",
+  info: "bg-[var(--color-info-light)] border border-[var(--color-info)]/25 text-[var(--color-info)]",
 };
 
 interface ToastProps {

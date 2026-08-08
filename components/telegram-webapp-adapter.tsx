@@ -158,13 +158,15 @@ export function TelegramWebAppAdapter() {
     tg.expand();
     if (atLeast("8.0")) {
       tg.requestFullscreen?.();
-      tg.setBottomBarColor?.("#f4f7f5");
+      // Telegram's API needs literal hex — keep in sync with --color-canvas.
+      tg.setBottomBarColor?.("#f6faf9");
     }
     if (atLeast("7.7")) tg.disableVerticalSwipes?.();
     if (atLeast("6.2")) tg.enableClosingConfirmation?.();
     if (atLeast("6.1")) {
-      tg.setHeaderColor?.("#0f2419");
-      tg.setBackgroundColor?.("#f4f7f5");
+      // Keep in sync with --color-deep-900 / --color-canvas (globals.css).
+      tg.setHeaderColor?.("#013d3a");
+      tg.setBackgroundColor?.("#f6faf9");
     }
 
     const applyViewportHeight = () => {

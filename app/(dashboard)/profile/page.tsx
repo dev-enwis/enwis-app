@@ -352,7 +352,7 @@ function ReferralCard() {
                 onClick={handleCopy}
                 className="rounded-full p-1.5 text-[var(--color-slate)] hover:bg-[var(--color-mist)] transition-colors shrink-0"
               >
-                {copied ? <Check size={14} className="text-emerald-600" /> : <Copy size={14} />}
+                {copied ? <Check size={14} className="text-[var(--color-success)]" /> : <Copy size={14} />}
               </button>
             </div>
             <p className="text-sm text-[var(--color-slate)]">

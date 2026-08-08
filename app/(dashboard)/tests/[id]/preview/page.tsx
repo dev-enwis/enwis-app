@@ -66,12 +66,12 @@ function QuestionPreviewCard({ question, index }: { question: TestPreview["quest
               key={c.id}
               className={`flex items-center gap-2 px-3 py-2 rounded-[var(--radius-md)] border text-sm ${
                 c.is_correct
-                  ? "border-emerald-300 bg-emerald-50 text-emerald-800"
+                  ? "border-[var(--color-success)]/40 bg-[var(--color-success-light)] text-[var(--color-success)]"
                   : "border-[var(--color-line)] text-[var(--color-ink)]"
               }`}
             >
               {c.is_correct ? (
-                <Check size={14} className="text-emerald-600 shrink-0" />
+                <Check size={14} className="text-[var(--color-success)] shrink-0" />
               ) : (
                 <X size={14} className="text-[var(--color-slate-light)] shrink-0" />
               )}
