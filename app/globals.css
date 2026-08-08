@@ -78,25 +78,36 @@
    ========================================================================== */
 
 @theme {
-  /* ---- Color: named brand tokens ---- */
-  --color-canvas: #f7f9fc;
-  --color-ink: #172033;
-  --color-ink-soft: #33415c;
-  --color-slate: #66738a;
-  --color-slate-light: #9aa6b8;
-  --color-mist: #eef3f8;
-  --color-line: #dce4ee;
+  /* ---- Color: named brand tokens (teal + accent yellow palette) ---- */
+  --color-canvas: #f6faf9;
+  --color-ink: #102a2a;
+  --color-ink-soft: #1e3a3a;
+  --color-slate: #5f7373;
+  --color-slate-light: #8fa3a1;
+  --color-mist: #eaf4f2;
+  --color-line: #d9e8e6;
+  --color-off-white: #f4fcfb;
 
-  --color-deep: #102a43;
-  --color-deep-800: #173f5f;
-  --color-deep-900: #0b1f33;
+  --color-deep: #026b66;
+  --color-deep-800: #015955;
+  --color-deep-900: #013d3a;
 
-  --color-volt: #18a999;
-  --color-volt-light: #43c7b8;
-  --color-volt-dim: #b9eee8;
+  --color-volt: #018e8a;
+  --color-volt-light: #00aeaa;
+  --color-volt-dim: #bfe9e7;
 
-  --color-danger: #d95d68;
-  --color-danger-light: #fbecee;
+  --color-accent: #ffd21c;
+  --color-accent-soft: #fff6d6;
+
+  --color-danger: #d64545;
+  --color-danger-light: #fbecec;
+
+  --color-success: #159a72;
+  --color-success-light: #e3f5ee;
+  --color-warning: #d99a00;
+  --color-warning-light: #fff4d9;
+  --color-info: #2188c7;
+  --color-info-light: #e6f2fa;
 
   /* ---- Radius: pill-forward system ---- */
   --radius-pill: 999px;
@@ -113,7 +124,7 @@
   --shadow-soft-sm: 0 2px 8px -2px rgb(17 24 39 / 0.06), 0 1px 2px -1px rgb(17 24 39 / 0.04);
   --shadow-soft-md: 0 12px 32px -8px rgb(17 24 39 / 0.10), 0 4px 12px -4px rgb(17 24 39 / 0.06);
   --shadow-soft-lg: 0 24px 64px -12px rgb(17 24 39 / 0.16), 0 8px 24px -8px rgb(17 24 39 / 0.08);
-  --shadow-volt-glow: 0 16px 48px -12px rgb(138 230 25 / 0.35);
+  --shadow-volt-glow: 0 16px 48px -12px rgb(1 142 138 / 0.35);
 
   /* ---- Easing ---- */
   --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
@@ -165,6 +176,15 @@
    these variables resolve to within the wrapper.
    ========================================================================== */
 .admin-theme {
+  /* Pinned to the pre-rebrand navy/indigo palette: the product-wide
+     rebrand to teal (see @theme above) must NOT leak into the admin
+     "control room" surface. */
+  --color-canvas: #f7f9fc;
+  --color-ink: #172033;
+  --color-ink-soft: #33415c;
+  --color-slate: #66738a;
+  --color-slate-light: #9aa6b8;
+
   --color-deep: #102a43;
   --color-deep-800: #173f5f;
   --color-deep-900: #0b1f33;
@@ -175,6 +195,9 @@
 
   --color-mist: #e8f0f6;
   --color-line: #d5e1eb;
+
+  --color-danger: #d95d68;
+  --color-danger-light: #fbecee;
 
   --shadow-volt-glow: 0 16px 48px -12px rgb(24 169 153 / 0.3);
 }
@@ -213,11 +236,15 @@
 
   ::selection {
     background: var(--color-volt);
-    color: var(--color-deep-900);
+    color: #ffffff;
+  }
+
+  ::placeholder {
+    color: var(--color-slate-light);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-deep);
+    outline: 2px solid var(--color-volt);
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -270,6 +297,13 @@
   .app-page-header h1 {
     font-size: clamp(1.5rem, 2vw, 2rem);
     font-weight: 700;
+  }
+
+  /* Brand hero surface: layered teal radial gradient (spec palette). */
+  .hero-gradient {
+    background:
+      radial-gradient(circle at 60% 40%, #00aeaa 0%, #018e8a 45%, #026b66 100%);
+    color: #ffffff;
   }
 }
 
