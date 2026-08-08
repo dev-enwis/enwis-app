@@ -116,7 +116,7 @@ export function GoogleLoginButton({ onError, children }: Props) {
           position: "absolute",
           inset: 0,
           opacity: 0,
-          pointerEvents: "none",
+          pointerEvents: "auto",
           overflow: "hidden",
           borderRadius: 12,
         }}
@@ -125,6 +125,7 @@ export function GoogleLoginButton({ onError, children }: Props) {
         ref={buttonRef}
         type="button"
         onClick={handleClick}
+        aria-label="Google orqali kirish"
         style={{
           width: "100%",
           display: "flex",
@@ -144,9 +145,9 @@ export function GoogleLoginButton({ onError, children }: Props) {
         }}
         onMouseEnter={(e) => {
           const el = e.currentTarget;
-          el.style.borderColor = "#6366f1";
-          el.style.boxShadow = "0 0 0 3px rgba(99,102,241,.12)";
-          el.style.background = "#fff";
+          el.style.borderColor = "var(--color-volt)";
+          el.style.boxShadow = "0 0 0 3px color-mix(in srgb, var(--color-volt) 18%, transparent)";
+          el.style.background = "var(--color-canvas)";
         }}
         onMouseLeave={(e) => {
           const el = e.currentTarget;

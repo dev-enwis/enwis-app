@@ -70,7 +70,7 @@ export default function AdminLoginPage() {
       />
 
       <div className="relative z-10 w-full max-w-md">
-        <div className="text-center mb-8">
+        <div className="mb-8 text-center">
           <div className="inline-flex justify-center">
             <Logo href="/admin/login" />
           </div>
@@ -83,7 +83,7 @@ export default function AdminLoginPage() {
           </h1>
         </div>
 
-        <div className="rounded-[var(--radius-2xl)] border border-[var(--color-line)] bg-white p-8 shadow-[var(--shadow-soft-md)]">
+        <div className="rounded-[var(--radius-2xl)] border border-[var(--color-line)] bg-[var(--color-canvas)] p-8 shadow-[var(--shadow-soft-md)]">
           {error && (
             <div className="mb-5 p-3.5 rounded-[var(--radius-lg)] bg-[var(--color-danger-light)] text-[var(--color-danger)] text-sm font-medium">
               {error}
