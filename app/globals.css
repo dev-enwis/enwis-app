@@ -79,24 +79,24 @@
 
 @theme {
   /* ---- Color: named brand tokens ---- */
-  --color-canvas: #ffffff;
-  --color-ink: #111827;
-  --color-ink-soft: #1f2937;
-  --color-slate: #64748b;
-  --color-slate-light: #94a3b8;
-  --color-mist: #f4f6f5;
-  --color-line: #e7eae8;
+  --color-canvas: #f7f9fc;
+  --color-ink: #172033;
+  --color-ink-soft: #33415c;
+  --color-slate: #66738a;
+  --color-slate-light: #9aa6b8;
+  --color-mist: #eef3f8;
+  --color-line: #dce4ee;
 
-  --color-deep: #0c2620;
-  --color-deep-800: #143c32;
-  --color-deep-900: #071512;
+  --color-deep: #102a43;
+  --color-deep-800: #173f5f;
+  --color-deep-900: #0b1f33;
 
-  --color-volt: #8ae619;
-  --color-volt-light: #b9f53e;
-  --color-volt-dim: #d6f79e;
+  --color-volt: #18a999;
+  --color-volt-light: #43c7b8;
+  --color-volt-dim: #b9eee8;
 
-  --color-danger: #ef4444;
-  --color-danger-light: #fef2f2;
+  --color-danger: #d95d68;
+  --color-danger-light: #fbecee;
 
   /* ---- Radius: pill-forward system ---- */
   --radius-pill: 999px;
@@ -165,18 +165,18 @@
    these variables resolve to within the wrapper.
    ========================================================================== */
 .admin-theme {
-  --color-deep: #1e1b4b;
-  --color-deep-800: #312e81;
-  --color-deep-900: #14123a;
+  --color-deep: #102a43;
+  --color-deep-800: #173f5f;
+  --color-deep-900: #0b1f33;
 
-  --color-volt: #818cf8;
-  --color-volt-light: #a5b4fc;
-  --color-volt-dim: #c7d2fe;
+  --color-volt: #18a999;
+  --color-volt-light: #43c7b8;
+  --color-volt-dim: #b9eee8;
 
-  --color-mist: #f5f5fa;
-  --color-line: #e4e4f0;
+  --color-mist: #e8f0f6;
+  --color-line: #d5e1eb;
 
-  --shadow-volt-glow: 0 16px 48px -12px rgb(129 140 248 / 0.35);
+  --shadow-volt-glow: 0 16px 48px -12px rgb(24 169 153 / 0.3);
 }
 
 
@@ -249,6 +249,27 @@
     max-width: 84rem;
     margin-inline: auto;
     padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .app-surface {
+    background: var(--color-canvas);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft-sm);
+  }
+
+  .app-page-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .app-page-header h1 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: 700;
   }
 }
 
